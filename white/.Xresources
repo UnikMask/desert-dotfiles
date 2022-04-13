@@ -1,0 +1,60 @@
+
+! Fonts }}}
+Xft.dpi: 150
+Xft.hintstyle: hintfull
+Xft.hinting: true
+Xft.antialias: true
+Xft.rgba: rgb
+! }}}
+
+! Main theme
+! *.background: 				#262626
+! *.foreground: 				#ffcb83
+! *.cursor: 					#fb521c
+! *.selection_background: 	#c03f1f
+! *.color0: 					#000000
+! *.color8: 					#6a4e29
+! *.color1: 					#c03900
+! *.color9: 					#ff8b67
+! *.color2: 					#a3a900
+! *.color10: 					#f6ff3f
+! *.color3: 					#caae00
+! *.color11: 					#ffe36e
+! *.color4: 					#bd6c00
+! *.color12: 					#ffbd54
+! *.color5: 					#fb5d00
+! *.color13: 					#fc874f
+! *.color6: 					#f79400
+! *.color14: 					#c59752
+! *.color7: 					#ffc88a
+! *.color15: 					#f9f9fe
+! *.selection_foreground: 	#262626
+
+! IrohLight v0.1
+*.background:   #ffeab2
+*.foreground:   #7e504a
+*.cursorColor:  #7e504a
+*.color0:       #c6caab
+*.color1:       #c7b78e
+*.color9:       #bfa76a
+*.color8:       #b59952
+*.color10:      #708894
+*.color2:       #85aeb1
+*.color11:      #ca2c18
+*.color3:       #d33b24
+*.color12:      #0077a5
+*.color4:       #006174
+*.color13:      #e3630a
+*.color5:       #ff771d
+*.color14:      #d38007
+*.color6:       #faac09
+*.color7:       #816459
+*.color15:      #6b504a
+
+
+! Rxvt config
+URxvt*termName: 			rxvt-unicode-256color
+URxvt*font: 				xft:FiraCode Nerd Font Mono:style=Retina:size=10
+URxvt*buffered:     		false
+URxvt*saveLines:    		2000
+URxvt*scrollBar:        	false

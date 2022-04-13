@@ -1,0 +1,43 @@
+
+! Fonts }}}
+Xft.dpi: 150
+Xft.hintstyle: hintfull
+Xft.hinting: true
+Xft.antialias: true
+Xft.rgba: rgb
+! }}}
+
+
+! Iroh
+*.background:   #2e2b2a
+*.foreground:   #e9d49c
+*.cursorColor:  #e9d49c
+*.color0:       #1a0909
+*.color1:       #0c0000
+*.color9:       #816459
+*.color8:       #c2604c
+*.color2:       #899470
+*.color10:      #9eb185
+*.color3:       #ca2c18
+*.color11:      #d33b24
+*.color4:       #627400
+*.color12:      #90c523
+*.color5:       #e3630a
+*.color13:      #ff771d
+*.color6:       #d38007
+*.color14:      #faac09
+*.color7:       #d6caab
+*.color15:      #f6efdd
+
+
+! Rxvt config
+URxvt*termName: 			rxvt-unicode-256color
+URxvt*font: 				xft:FiraCode Nerd Font Mono:style=Retina:size=10
+URxvt*buffered:     		false
+URxvt*saveLines:    		2000
+URxvt*scrollBar:        	false
+xterm*termName: 			xterm-256color
+xterm*font: 				xft:FiraCode Nerd Font Mono:style=Retina:size=10
+xtern*buffered:     		false
+xterm*saveLines:    		2000
+xterm*scrollBar:        	false

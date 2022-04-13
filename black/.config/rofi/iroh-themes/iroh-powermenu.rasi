@@ -1,0 +1,93 @@
+/* === === === === === === === ===
+ * Iroh theme Power menu
+ * Creator: UnikMask
+ * Email: <visorunik@gmail.com>
+ */
+
+/* Configuration for the power menu */
+configuration {
+	show-icons: true;
+	icon-theme: "Tela-purple";
+	font: "Fira Code Nerd Font 120";
+	location: 1;
+	fullscreen: true;
+}
+
+/* Color import */
+@import "iroh.rasi"
+
+/*
+ * Window configuration - 
+ * Fullscreen blur
+ */
+window {
+	height: 100%;
+	width: 100%;
+	transparency: "real";
+}
+
+mainbox {
+	children: [textboxn, textbox, listview];
+	background-color: @blur-bg;
+	anchor: 5;
+	border: 0;
+	border-radius: 0;
+	border-color: @blur-bg;
+}
+
+message {
+	enable: true;
+	background-color: @blur-bg;
+	content: "How do you wanna do this?";
+	font: "Fira Code Nerd Font 60";
+}
+
+textboxn {
+	font: "Noto Sans 50";
+	text-color: @fg;
+	border: 0;
+	highlight: bold;
+	str: "What do you want to do?";
+	highlight: bold;
+	margin: 50% 0 0 36%;
+}
+
+textbox {
+	font: "Noto Sans 60";
+	text-color: @fg;
+	border: 0;
+	margin: 1em 0 -2em 0;
+	highlight: bold;
+	str: "power off    restart        lock 	  sleep 	hibernate   log out";
+	padding: 30% 0% -10em 13.8%;
+}
+
+listview {
+	layout: horizontal;
+	background-color: @empty;
+	dynamic: true;
+	border: 0;
+	spacing: 0%;
+	border-radius: 10px;
+
+	// Playing around with margin, background color, and padding
+	margin: -0.4em 2.5em 2.42em 2.285em;
+	padding: 0em 0em 0em 0em;
+	scrollbar: false;
+}
+
+element {
+	border: 0;
+	horizontal-align: 0;
+	background-color: @empty;
+	foreground-color: @fg;
+	margin: 0 0 0 0;
+	padding: 0em 0.8em 0em -0.6em;
+}
+
+element selected {
+	border: 0;
+	border-radius: 10px;
+	background-color: @bg-light;
+	text-color: @fg;
+}

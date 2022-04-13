@@ -1,0 +1,66 @@
+#TabsToolbar {
+	margin-top: 4px !important;
+	margin-bottom: 4px !important;
+	scale: 0.85em;
+}
+
+.tabbrowser-tab::after .tabbrowser-tab::before {
+	border-left: none !important;
+}
+
+#titlebar, window, #main-window, #toolbar-menubar, #TabsToolbar, #PersonalToolbar, #navigator-toolbox {
+	background-color: #ffeab2 !important;
+}
+
+.tabbrowser-tab:not(:hover) .tab-close-button{ 
+	display:none; 
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button{ 
+	display:block !important; 
+  	border-radius: 10px !important;
+}
+.tabbrowser-tab:not([pinned]):hover  .tab-icon-image {
+	display: none !important;
+}
+ 
+.tabbrowser-tab :hover > .tab-throbber, .tab-icon-image, .tab-icon-overlay, .tab-label-container, .tab-icon-sound {
+  	-moz-box-ordinal-group: 2 !important;
+}
+ 
+.tabbrowser-tab .tab-close-button {
+	margin-left: -2px !important;
+	margin-right: 4px !important;
+}
+
+.tabbrowser-tab .tab-background[selected="true"] {
+  	border-radius: 3px !important;
+	margin-left: 5px !important;
+	background:  #c7b78e !important;
+	transition: all 800ms var(--animation-easing-function) !important;
+}
+.tabbrowser-tab :hover > .tab-background[selected="true"]  {
+  	border-radius: 20px !important;
+	margin-left: 5px !important;
+	background: #c7b78e !important;
+	transition: all 800ms var(--animation-easing-function) !important;
+}
+.tabbrowser-tab .tab-background{
+	border-radius: 3px !important;
+	margin-left: 5px !important;
+	background: #ffeab2 !important;
+	transition: all 800ms var(--animation-easing-function) !important;
+}
+.tabbrowser-tab :hover > .tab-background:not([selected]) {
+	border-radius: 20px !important;
+	margin-left: 5px !important;
+	background: #85aeb1 !important;
+	transition: all 800ms var(--animation-easing-function) !important;
+}
+
+:root {
+	--tabs-border: transparent !important;
+}
+
+.tab-line {
+	opacity: 0 !important;
+}

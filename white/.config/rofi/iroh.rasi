@@ -1,0 +1,12 @@
+* {
+	bg: 		#FFEAB2;
+	bg-light: 	#D6CAAB; 
+	blur-bg: 	#D6CAAB80;
+	fg: 		#7D5650;
+	fg-dark: 	#2E2A2B;
+	dust: 		#C6CAAB;
+	mony: 		#709489;
+	mony-light:	#85b189;
+	empty: #00000000;
+	background-color: #00000000;
+}

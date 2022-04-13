@@ -1,0 +1,89 @@
+/* === === === === === === === ===
+ * iroh-panel: a panel view for small polybar widgets.
+ * Creator: UnikMask
+ * Email: <visorunik@gmail.com>
+ * === === === === === === === ===
+ */
+
+@import "iroh.rasi"
+
+* {
+	font: "Fira Code Nerd Font 24";
+	spacing: 0;
+}
+
+window {
+	transparency: "real";
+	background-color: @empty;
+	height: 37%;
+}
+
+mainbox {
+	children: [inputbar, message, mode-switcher, listview];
+	spacing: 50px;
+	padding: 0 0;
+	border: 0;
+}
+
+inputbar {
+	children: [prompt, textbox-colon, entry];
+	background-color: @fg-dark;
+}
+
+prompt {
+	enable: true;
+	text-color: @mony;
+	font: "Fira Code Nerd Font 12";
+}
+
+textbox-prompt-colon {
+	expand: false;
+	str: ":";
+	margin: 0 1ch 0 0;
+	text-color: @mony;
+}
+
+entry {
+	text-color: @mony;
+}
+
+mode-switcher, message {
+	border: 1px 0;
+	border-color: @bg-light;
+}
+
+button, textbox {
+	background-color: @blur-bg;
+	text-color: @fg;
+	padding: 5px;
+}
+
+button selected {
+	background-color: @mony;
+	text-color: @bg-light;
+}
+
+listview {
+	scrollbar: true;
+	margin: 0 10px 0 30px;
+}
+
+scrollbar {
+	background-color: @empty;
+	handle-color: @mony;
+	handle-width: 10px;
+	border: 0;
+}
+
+element {
+	padding: 5px;
+	text-color: @fg;
+	background-color: @empty;
+	highlight: bold underline;
+}
+
+element selected {
+	background-color: @bg-light;
+	text-color: @fg;
+	border-radius: 0;
+}

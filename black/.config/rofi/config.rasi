@@ -1,0 +1,105 @@
+/*
+ * === === === === === === === ===
+ * Iroh app launcher for rofi
+ * Creator: UnikMak
+ * Email: <visorunik@gmail.com>
+ * === === === === === === === ===
+ */
+
+/* General configuration */
+configuration {
+	drun-display-format: "{icon}	 {name}";
+	display-drun: "What do you want to do today?";
+	show-icons: true;
+	icon-theme: "Tela-purple";
+	font: "Fira Code Nerd Font 20";
+	location: 8;
+	yoffset: 5;
+	xoffset: 0;
+	fake-transparency: false;
+	hide-scrollbar: false;
+	bw: 0;
+	terminal: "kitty";
+	sidebar-mode: false;
+}
+
+/* Color import */
+@import "iroh.rasi"
+
+/* ############ */
+
+/*
+ * Window configuration:
+ * 	Window on the side, transparent
+ */
+window {
+	height: 95%;
+	width: 15%;
+	anchor: 6;
+	transparency: "real";
+}
+
+mainbox {
+	children: [ inputbar, prompt, listview ];
+	background-color: @blur-bg;
+	border: 0;
+	border-radius: 0;
+	border-color: @blur-bg;
+}
+
+listview {
+	lines: 30;
+	padding: 1;
+	spacing: 5;
+	scrollbar: true;
+	scrollbar-width: 10;
+}
+
+scrollbar {
+	handle-color: @mony;
+}
+
+element {
+	border: 0;
+	border-radius: 4;
+	border-color: @blur-bg;
+	background-color: @blur-bg;
+	text-color: @fg;
+	orientation: horizontal;
+	padding: 8 8 8 8;
+}
+
+element selected {
+	border: 0;
+	border-radius: 15;
+	border-color: @mony;
+	background-color: @mony;
+	text-color: @bg;
+	padding: 8 8 8 8;
+} 
+
+element-icon selected {
+	background-color: @mony-light;
+	border-radius: 20;
+}
+
+inputbar {
+	children: [entry];
+	padding: 4 2 40 2;
+	margin: 4 4 0 0;
+	background-color: @bg-light;
+	border-color: @bg-light;
+}
+
+prompt {
+	enabled: false;
+	background-color: @bg-light;
+}
+
+entry {
+	text-color: @bg;
+	border-radius: 4;
+	background-color: @fg-dark;
+	padding: 8 8 8 8;
+	margin: 0 40 0 0;
+}
