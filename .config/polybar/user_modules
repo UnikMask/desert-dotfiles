@@ -1,0 +1,60 @@
+; vim:ft=dosini
+
+[module/appmenu]
+type = custom/text
+content = "  "
+click-left = ~/.config/rofi/launchIroh.sh 
+content-font = 4
+content-background = ${colors.dark-grey}
+
+[module/browser]
+type = custom/text
+content = 
+click-left = firefox &
+click-right = firefox --private-window &
+content-font = 4
+
+[module/mail]
+type = custom/text
+content = 
+click-left = thunderbird &
+content-font = 4
+
+[module/minecraft]
+type = custom/text
+content = 
+content-font = 4
+click-left = multimc &
+
+[module/terminal]
+type = custom/text
+content = 
+click-left = kitty &
+click-right = kitty -c ~/.config/kitty/riceKitty.conf &
+content-font = 4
+
+[module/discord]
+type = custom/text
+content = ﭮ
+click-left = discord &
+content-font = 4
+
+[module/sep]
+type = custom/text
+content = "    "
+content-font = 4
+
+[module/kde-connect]
+type = custom/script
+exec = /home/alexa/.config/polybar/polybar-kdeconnect.sh -d &
+tail = true
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "阮 "
+exec = python /home/alexa/gitrepos/polybar-spotify/spotify_status.py -t 35 -f '{artist}: {song} - {album}' -p '[],[]'
+click-left = playerctl --player=spotify play-pause
+click-right = playerctl --player=spotify next
+click-middle = playerctl --player=spotify previous
+
