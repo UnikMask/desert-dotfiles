@@ -1,6 +1,6 @@
 
 ! Fonts }}}
-Xft.dpi: 150
+Xft.dpi: 120
 Xft.hintstyle: hintfull
 Xft.hinting: true
 Xft.antialias: true
