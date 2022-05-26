@@ -17,8 +17,7 @@ exec kdeconnect
 exec mpDris2
 exec xbindkeys
 exec nm-applet
-exec picom &
-exec clight
+exec picom
 exec easyeffects --gapplication-service
 # exec ~/scripts/pcModed.sh
 

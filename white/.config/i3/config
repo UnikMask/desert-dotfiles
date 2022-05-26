@@ -9,16 +9,14 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 # exec ~/.scripts/start_environ.py i3 Dead bc I was too dumb
-exec xrandr --output DP1 --auto --right-of eDP1
+exec autorandr --change
 exec ~/dotboy/saves/desert/theme_init.py
-exec ~/scripts/autoDock.sh
 exec dunst
 exec kdeconnect
 exec xbindkeys
 exec nm-applet
-exec picom &
-exec clight
-exec_always --no-startup-id polybar -r unikBar
+exec picom
+exec polybar -r unikBar
 
 
 #For i3-gaps
