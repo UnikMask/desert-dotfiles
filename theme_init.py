@@ -24,7 +24,8 @@ dark_path = base_path.joinpath('black')
 def getThemePathFromTime():
     # Select light or dark theme from hour of the day
     if getHour() >= switch_off_time and getHour() < switch_on_time:
-        return light_path
+        #return light_path
+        return dark_path
     else:
         return dark_path
 
