@@ -19,6 +19,7 @@ exec nm-applet
 exec picom &
 exec clight
 exec easyeffects --gapplication-service
+exec xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
 exec --no-startup-id polybar -rq unikBar
 # exec ~/scripts/pcModed.sh
 
