@@ -23,11 +23,7 @@ dark_path = base_path.joinpath('black')
 
 def getThemePathFromTime():
     # Select light or dark theme from hour of the day
-    if getHour() >= switch_off_time and getHour() < switch_on_time:
-        #return light_path
-        return dark_path
-    else:
-        return dark_path
+    return dark_path
 
 
 def __main__():
@@ -68,10 +64,10 @@ def __main__():
         print("Dunst linked!")
 
         # Symlink the vim theme config
-        t_vim_path = theme_path / '.config' / 'theme.vim'
-        a_vim_path = Path.home() / '.config' / 'nvim' / 'theme.vim'
-        theme_utils.theme_link(t_vim_path, a_vim_path)
-        print("Vim linked!")
+        # t_vim_path = theme_path / '.config' / 'theme.vim'
+        # a_vim_path = Path.home() / '.config' / 'nvim' / 'theme.vim'
+        # theme_utils.theme_link(t_vim_path, a_vim_path)
+        # print("Vim linked!")
 
         # Symlink iroh theme config
         t_rofi_path = theme_path / '.config' / 'rofi' / 'iroh.rasi'
