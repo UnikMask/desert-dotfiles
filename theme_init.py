@@ -68,10 +68,10 @@ def __main__():
         print("Dunst linked!")
 
         # Symlink the vim theme config
-        t_vim_path = theme_path / '.config' / 'theme.vim'
-        a_vim_path = Path.home() / '.config' / 'nvim' / 'theme.vim'
-        theme_utils.theme_link(t_vim_path, a_vim_path)
-        print("Vim linked!")
+        # t_vim_path = theme_path / '.config' / 'theme.vim'
+        # a_vim_path = Path.home() / '.config' / 'nvim' / 'theme.vim'
+        # theme_utils.theme_link(t_vim_path, a_vim_path)
+        # print("Vim linked!")
 
         # Symlink iroh theme config
         t_rofi_path = theme_path / '.config' / 'rofi' / 'iroh.rasi'
