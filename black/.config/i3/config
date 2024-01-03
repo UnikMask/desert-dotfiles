@@ -9,14 +9,13 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 # exec ~/.scripts/start_environ.py i3 Dead bc I was too dumb
-# Display
-exec_always xrandr --output DP1 --auto --right-of eDP1
 
 # General stuff
 exec --no-startup-id source ~/.xinitrc
 
 # Style
 exec_always ~/dotboy/saves/desert/theme_init.py
+exec_always ~/scripts/launchPolybar.sh
 # exec ~/scripts/pcModed.sh
 
 #For i3-gaps
