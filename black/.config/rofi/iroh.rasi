@@ -1,7 +1,7 @@
 * {
 	fg: 		#E9D49C;
 	fg-dark: 	#D6CAAB; 
-	blur-bg: 	#403735a0;
+	blur-bg: 	#403735e0;
 	bg: 		#2e2a2b;
 	bg-light: 	#403735;
 	dust: 		#7d5650;
