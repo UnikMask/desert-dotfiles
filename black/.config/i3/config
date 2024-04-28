@@ -35,7 +35,7 @@ exec --no-startup-id xset fp rehash
 set $mod Mod4
 set $meta Mod1
 set $term "kitty"
-set $browser firefox
+set $browser waterfox-g
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
