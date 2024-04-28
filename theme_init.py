@@ -57,7 +57,7 @@ def __main__():
                                Path.home() / '.wlinitrc')
         print("Wayland Init RC linked!")
 
-        theme_utils.theme_link(base_path / 'zshrc', Path.home() / '.zshrc')
+        theme_utils.theme_link(base_cfg / 'zshrc', Path.home() / '.zshrc')
         theme_utils.theme_link(base_cfg / 'oh-my-zsh',
                                Path.home() / '.oh-my-zsh')
         print("ZSH / oh-my-zsh linked!")
