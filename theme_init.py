@@ -98,9 +98,11 @@ def __main__():
         # Sway configuration
         theme_utils.theme_link(theme_path / '.config' / 'sway',
                                Path.home() / '.config' / 'sway')
+        print("Sway linked!")
         theme_utils.theme_link(theme_path / '.config' / 'waybar',
                                Path.home() / '.config' / 'waybar')
 
+        print("Waybar linked!")
     else:
         print("ERROR: Path to given theme doesn't exist!")
         exit(1)
