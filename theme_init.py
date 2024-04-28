@@ -82,11 +82,11 @@ def __main__():
         print("Rofi linked!")
 
         # Symlink userChrome.css
-        t_chromep = theme_path / '.config' / 'userChrome.css'
-        a_chromep = Path.home() / '.mozilla' / 'firefox'
-        a_chromep = a_chromep.joinpath('ce5vez5l.default-release')
-        a_chromep = a_chromep.joinpath('chrome/userChrome.css')
-        theme_utils.theme_link(t_chromep, a_chromep)
+        # t_chromep = theme_path / '.config' / 'userChrome.css'
+        # a_chromep = Path.home() / '.mozilla' / 'firefox'
+        # a_chromep = a_chromep.joinpath('ce5vez5l.default-release')
+        # a_chromep = a_chromep.joinpath('chrome/userChrome.css')
+        # theme_utils.theme_link(t_chromep, a_chromep)
         print("Firefox linked!")
 
         # i3 configuration
