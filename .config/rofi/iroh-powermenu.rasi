@@ -1,0 +1,78 @@
+/* vim:ft=css
+ * === === === === === === === ===
+ * 2nd Powermenu system for rofi
+ * Author: UnikMask
+ * Email: <visorunik@gmail.com>
+ * === === === === === === === ===
+ */
+
+/* Powermenu configuration */
+
+configuration {
+	show-icons: true;
+	font: "FiraCode Nerd Font 40";
+	location: 0;
+	fullscreen: true;
+}
+
+/* Color import */
+@import "iroh.rasi"
+
+/* Window configuration - in the center, taking the majority of the space.*/
+window {
+	height: 40%;
+	width: 60%;
+}
+
+mainbox {
+	orientation: vertical;
+	children: [box-center, listview];
+	background-color: @blur-bg;
+	anchor: center;
+	border: 0;
+	border-radius: 0%;
+	border-color: @blur-bg;
+}
+
+dummy {
+	expand: true;
+}
+box-center {
+	orientation: horizontal;
+	expand: false;
+	children: [dummy, textbox-prompt, dummy];
+}
+
+textbox-prompt {
+	content: "What do you want to do?";
+	margin: 5% -10% 0 -10%;
+	text-color: @fg;
+	expand: false;
+}
+
+listview {
+	layout: horizontal;
+    margin: 40px 0px 0px 100px;
+	expand: true;
+}
+
+element {
+	orientation: vertical;
+	padding: 0 1.5% 1.5% 1.5%;
+	border: 0 1% 0 1%;
+	children: [element-icon, element-text];
+}
+element-text {
+	font: "FiraCode Nerd Font Mono 60";
+	text-color: @fg;
+}
+
+element-text selected {
+	text-color: @bg;
+}
+
+element selected {
+	border-radius: 40px;
+	background-color: @mony;
+	border-color: @mony-light;
+}
