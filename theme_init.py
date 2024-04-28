@@ -32,6 +32,7 @@ def __main__():
     if not theme_path.is_dir():
         print("ERROR: Path to given theme doesn't exist!")
         exit(1)
+
     # Use wallpaper
     wp_path = theme_path / 'wallpaper.jpg'
     theme_cfg = theme_path / 'config'
@@ -44,6 +45,11 @@ def __main__():
     elif os.environ["XDG_SESSION_TYPE"] != "wayland" \
             and shutil.which("feh"):
         theme_utils.runsilent(['feh', '--bg-scale', str(wp_path)])
+
+    # Link environment path
+    theme_utils.theme_link(base_cfg / 'environment.d',
+                           home_cfg / 'environment.d')
+    print('Systemd user environment linked!')
 
     # Unlink original kitty path and link new one
     theme_utils.theme_link(
@@ -114,6 +120,10 @@ def __main__():
     # Mopidy config
     theme_utils.theme_link(base_cfg / 'mopidy', home_cfg / 'mopidy')
     print('Mopidy Linked!')
+
+    # Gtk settings
+    theme_utils.theme_link(theme_cfg / 'gtk-3.0', home_cfg / 'gtk-3.0')
+    print("Gtk settings Linked!")
 
 
 __main__()
