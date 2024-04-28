@@ -128,5 +128,10 @@ def __main__():
     theme_utils.theme_link(theme_cfg / 'gtk-3.0', home_cfg / 'gtk-3.0')
     print("Gtk settings Linked!")
 
+    # XBindKeysRC config
+    theme_utils.theme_link(base_cfg / 'xbindkeysrc',
+                           Path.home() / '.xbindkeysrc')
+    print("XBindkeysRC linked!")
+
 
 __main__()
