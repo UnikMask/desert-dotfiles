@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import datetime
 import shutil
 import theme_utils
@@ -31,7 +32,12 @@ def __main__():
     if theme_path.is_dir():
         # Use wallpaper
         wp_path = theme_path / 'wallpaper.jpg'
-        if shutil.which("feh"):
+
+        if os.environ["XDG_SESSION_TYPE"] == "wayland" \
+                and shutil.which("swaybg"):
+            theme_utils.runsilent(["swaybg", str(wp_path)])
+        elif os.environ["XDG_SESSION_TYPE"] != "wayland" \
+                and shutil.which("feh"):
             theme_utils.runsilent(['feh', '--bg-scale', str(wp_path)])
 
         t_xrdb_path = theme_path / '.Xresources'
