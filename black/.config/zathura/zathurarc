@@ -1,0 +1,22 @@
+set selection-clipboard clipboard
+
+set default-bg #E9D49C
+set default-fg #7E504A
+set completion-bg #E9D49C
+set completion-fg #7E504A
+set completion-group-bg #E9D49C
+set completion-group-fg #7E504A
+set completion-highlight-bg #E9D49C
+set completion-highlight-fg #7E504A
+set inputbar-bg #E9D49C
+set inputbar-fg "#859eb1"
+set statusbar-bg "#E9D49C"
+set statusbar-fg "#7E504A"
+set notification-bg "#E9D49C"
+set notification-fg "#7E504A"
+set tabbar-bg "#E9D49C"
+set tabbar-fg "#7E504A"
+set inputbar-bg "#E9D49C"
+set recolor true
+set recolor-darkcolor "#7E504A"
+set recolor-lightcolor "#E9D49C"
