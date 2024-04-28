@@ -81,25 +81,11 @@ def __main__():
             theme_utils.run_async(["dunst"])
         print("Dunst linked!")
 
-        # Symlink the vim theme config
-        # t_vim_path = theme_path / 'config' / 'theme.vim'
-        # a_vim_path = Path.home() / 'config' / 'nvim' / 'theme.vim'
-        # theme_utils.theme_link(t_vim_path, a_vim_path)
-        # print("Vim linked!")
-
         # Symlink iroh theme config
         theme_utils.theme_link(base_cfg / 'rofi', home_cfg / 'rofi')
         theme_utils.theme_link(theme_cfg / 'rofi' / 'iroh.rasi',
                                home_cfg / 'rofi' / 'iroh.rasi')
         print("Rofi linked!")
-
-        # Symlink userChrome.css
-        # t_chromep = theme_path / 'config' / 'userChrome.css'
-        # a_chromep = Path.home() / '.mozilla' / 'firefox'
-        # a_chromep = a_chromep.joinpath('ce5vez5l.default-release')
-        # a_chromep = a_chromep.joinpath('chrome/userChrome.css')
-        # theme_utils.theme_link(t_chromep, a_chromep)
-        print("Firefox linked!")
 
         # i3 configuration
         theme_utils.theme_link(theme_cfg / 'i3' / 'config',
