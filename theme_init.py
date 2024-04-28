@@ -45,11 +45,11 @@ def __main__():
 
         t_xrdb_path = theme_path / '.Xresources'
         a_xrdb_path = Path.home() / '.Xresources'
-        t_kitty_path = theme_cfg / 'kitty' / 'theme.conf'
-        a_kitty_path = home_cfg / 'kitty' / 'theme.conf'
 
         # Unlink original kitty path and link new one
-        theme_utils.theme_link(t_kitty_path, a_kitty_path)
+        theme_utils.theme_link(base_cfg / 'kitty', Path.home() / 'kitty')
+        theme_utils.theme_link(theme_cfg / 'kitty' / 'theme.conf',
+                               Path.home() / 'kitty' / 'theme.conf')
         print("Kitty linked!")
 
         theme_utils.theme_link(base_path / 'wlinitrc',
@@ -57,7 +57,7 @@ def __main__():
         print("Wayland Init RC linked!")
 
         theme_utils.theme_link(base_path / 'zshrc', Path.home() / '.zshrc')
-        theme_utils.theme_link(base_path / 'oh-my-zsh',
+        theme_utils.theme_link(base_cfg / 'oh-my-zsh',
                                Path.home() / '.oh-my-zsh')
         print("ZSH / oh-my-zsh linked!")
 
