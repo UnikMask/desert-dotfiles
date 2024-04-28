@@ -2,47 +2,46 @@
 
 [module/appmenu]
 type = custom/text
-content = "  "
+format = " 󰀻 "
+format-font = 4
 click-left = ~/.config/rofi/launchIroh.sh 
-content-font = 4
-content-background = ${colors.dark-grey}
+format-background = ${colors.dark-grey}
 
 [module/browser]
 type = custom/text
-content = 
-click-left = firefox &
-click-right = firefox --private-window &
-content-font = 4
+format = 
+format-font = 4
+click-left = firefox & disown
+click-right = firefox --private-window & disown
 
 [module/mail]
 type = custom/text
-content = 
-click-left = thunderbird &
-content-font = 4
+format = 󰇮
+format-font = 4
+click-left = thunderbird & disown
 
 [module/minecraft]
 type = custom/text
-content = 
-content-font = 4
-click-left = multimc &
+format = 󰍳
+format-font = 4
 
 [module/terminal]
 type = custom/text
-content = 
-click-left = kitty &
-click-right = kitty -c ~/.config/kitty/riceKitty.conf &
-content-font = 4
+format = 
+format-font = 4
+click-left = kitty & disown
+click-right = kitty -c ~/.config/kitty/riceKitty.conf & disown
 
 [module/discord]
 type = custom/text
-content = ﭮ
-click-left = discord &
-content-font = 4
+format= 󰙯
+format-font = 4
+click-left = discord & disown
 
 [module/sep]
 type = custom/text
-content = "    "
-content-font = 4
+format = "    "
+format-font = 4
 
 [module/kde-connect]
 type = custom/script
@@ -52,7 +51,7 @@ tail = true
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = "阮 "
+format-prefix = "󰓇 "
 exec = python /home/alexa/gitrepos/polybar-spotify/spotify_status.py -t 35 -f '{artist}: {song} - {album}' -p '[],[]'
 click-left = playerctl --player=spotify play-pause
 click-right = playerctl --player=spotify next

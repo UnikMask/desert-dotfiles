@@ -76,6 +76,7 @@ def __main__():
     print("Xresources linked!")
 
     # Reload polybar if exists
+    theme_utils.theme_link(base_cfg / 'polybar', home_cfg / 'polybar')
     if theme_utils.has_pid("polybar"):
         theme_utils.runsilent(["pkill", "-SIGKILL", "polybar"])
         theme_utils.run_async(["polybar", "-r", "-q", "unikBar"])
