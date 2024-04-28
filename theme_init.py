@@ -50,7 +50,7 @@ def __main__():
         print("Kitty linked!")
 
         theme_utils.theme_link(base_path / 'wlinitrc',
-                               Path.home(), '.wlinitrc')
+                               Path.home() / '.wlinitrc')
         print("Wayland Init RC linked!")
 
         theme_utils.theme_link(base_path / 'zshrc', Path.home() / '.zshrc')
@@ -70,8 +70,8 @@ def __main__():
         print("Polybar linked!")
 
         # Link and reload dunst
-        t_dunst_path = theme_path / '.config' / 'dunst' / 'dunstrc'
-        a_dunst_path = Path.home() / '.config' / 'dunst' / 'dunstrc'
+        t_dunst_path = theme_path / '.config' / 'dunst'
+        a_dunst_path = Path.home() / '.config' / 'dunst'
         theme_utils.theme_link(t_dunst_path, a_dunst_path)
         if theme_utils.has_pid("dunst"):
             theme_utils.runsilent(["pkill", "-SIGKILL", "dunst"])
