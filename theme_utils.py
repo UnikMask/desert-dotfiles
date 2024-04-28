@@ -23,12 +23,9 @@ def has_pid(taskname):
 
 # Link a theme file to a given path
 def theme_link(themed_path, link_path):
-    if themed_path.is_file():
-        if link_path.is_file() and link_path.is_symlink():
-            link_path.unlink()
-        if not link_path.is_file():
-            link_path.symlink_to(themed_path)
-        else:
-            print("Error: " + link_path + " is not a symbolic link.")
-
-
+    if link_path.is_symlink():
+        link_path.unlink()
+    if not link_path.is_file():
+        link_path.symlink_to(themed_path)
+    else:
+        print("Error: " + link_path + " is not a symbolic link.")
