@@ -74,7 +74,7 @@ focus_follows_mouse no
 bindsym $mod+Ctrl+k exec $term
 bindsym $mod+Ctrl+f exec $browser
 bindsym $mod+Ctrl+t exec thunderbird
-bindsym $mod+Ctrl+w exec /home/alexa/.scripts/printscreen.sh
+bindsym $mod+Ctrl+w exec /home/alexa/scripts/printscreen.sh
 bindsym $mod+x exec xkill
 bindsym $mod+Ctrl+g gaps inner all set 10
 bindsym $mod+Ctrl+n gaps inner all set 0
