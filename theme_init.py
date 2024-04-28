@@ -105,5 +105,9 @@ def __main__():
     theme_utils.theme_link(theme_cfg / 'zathura', home_cfg / 'zathura')
     print("Zathura linked!")
 
+    # GTK Themes config
+    theme_utils.theme_link(base_cfg / 'gtk-themes', Path.home() / '.themes')
+    print('GTK Theme Linked!')
+
 
 __main__()
