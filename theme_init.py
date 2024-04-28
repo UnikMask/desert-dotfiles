@@ -76,9 +76,10 @@ def __main__():
         # print("Vim linked!")
 
         # Symlink iroh theme config
-        t_rofi_path = theme_path / '.config' / 'rofi' / 'iroh.rasi'
-        a_rofi_path = Path.home() / '.config' / 'rofi' / 'iroh.rasi'
-        theme_utils.theme_link(t_rofi_path, a_rofi_path)
+        theme_utils.theme_link(base_path / '.config' / 'rofi',
+                               Path.home() / '.config' / 'rofi')
+        theme_utils.theme_link(theme_path / '.config' / 'rofi' / 'iroh.rasi',
+                               Path.home() / '.config' / 'rofi' / 'iroh.rasi')
         print("Rofi linked!")
 
         # Symlink userChrome.css
