@@ -32,6 +32,9 @@ def __main__():
     if theme_path.is_dir():
         # Use wallpaper
         wp_path = theme_path / 'wallpaper.jpg'
+        theme_cfg = theme_path / 'config'
+        base_cfg = base_path / 'config'
+        home_cfg = Path.home() / '.config'
 
         if os.environ["XDG_SESSION_TYPE"] == "wayland" \
                 and shutil.which("swaybg"):
@@ -42,8 +45,8 @@ def __main__():
 
         t_xrdb_path = theme_path / '.Xresources'
         a_xrdb_path = Path.home() / '.Xresources'
-        t_kitty_path = theme_path / '.config' / 'kitty' / 'theme.conf'
-        a_kitty_path = Path.home() / '.config' / 'kitty' / 'theme.conf'
+        t_kitty_path = theme_cfg / 'kitty' / 'theme.conf'
+        a_kitty_path = home_cfg / 'kitty' / 'theme.conf'
 
         # Unlink original kitty path and link new one
         theme_utils.theme_link(t_kitty_path, a_kitty_path)
@@ -70,8 +73,8 @@ def __main__():
         print("Polybar linked!")
 
         # Link and reload dunst
-        t_dunst_path = theme_path / '.config' / 'dunst'
-        a_dunst_path = Path.home() / '.config' / 'dunst'
+        t_dunst_path = theme_cfg / 'dunst'
+        a_dunst_path = home_cfg / 'dunst'
         theme_utils.theme_link(t_dunst_path, a_dunst_path)
         if theme_utils.has_pid("dunst"):
             theme_utils.runsilent(["pkill", "-SIGKILL", "dunst"])
@@ -79,20 +82,19 @@ def __main__():
         print("Dunst linked!")
 
         # Symlink the vim theme config
-        # t_vim_path = theme_path / '.config' / 'theme.vim'
-        # a_vim_path = Path.home() / '.config' / 'nvim' / 'theme.vim'
+        # t_vim_path = theme_path / 'config' / 'theme.vim'
+        # a_vim_path = Path.home() / 'config' / 'nvim' / 'theme.vim'
         # theme_utils.theme_link(t_vim_path, a_vim_path)
         # print("Vim linked!")
 
         # Symlink iroh theme config
-        theme_utils.theme_link(base_path / '.config' / 'rofi',
-                               Path.home() / '.config' / 'rofi')
-        theme_utils.theme_link(theme_path / '.config' / 'rofi' / 'iroh.rasi',
-                               Path.home() / '.config' / 'rofi' / 'iroh.rasi')
+        theme_utils.theme_link(base_cfg / 'rofi', home_cfg / 'rofi')
+        theme_utils.theme_link(theme_cfg / 'rofi' / 'iroh.rasi',
+                               home_cfg / 'rofi' / 'iroh.rasi')
         print("Rofi linked!")
 
         # Symlink userChrome.css
-        # t_chromep = theme_path / '.config' / 'userChrome.css'
+        # t_chromep = theme_path / 'config' / 'userChrome.css'
         # a_chromep = Path.home() / '.mozilla' / 'firefox'
         # a_chromep = a_chromep.joinpath('ce5vez5l.default-release')
         # a_chromep = a_chromep.joinpath('chrome/userChrome.css')
@@ -100,22 +102,18 @@ def __main__():
         print("Firefox linked!")
 
         # i3 configuration
-        t_i3 = theme_path / '.config' / 'i3' / 'config'
-        a_i3 = Path.home() / '.config' / 'i3' / 'config'
-        theme_utils.theme_link(t_i3, a_i3)
+        theme_utils.theme_link(theme_cfg / 'i3' / 'config',
+                               home_cfg / 'i3' / 'config')
         print("i3 linked!")
 
         # Sway configuration
-        theme_utils.theme_link(theme_path / '.config' / 'sway',
-                               Path.home() / '.config' / 'sway')
+        theme_utils.theme_link(theme_cfg / 'sway', home_cfg / 'sway')
         print("Sway linked!")
-        theme_utils.theme_link(theme_path / '.config' / 'waybar',
-                               Path.home() / '.config' / 'waybar')
+        theme_utils.theme_link(theme_cfg / 'waybar', home_cfg / 'waybar')
         print("Waybar linked!")
 
         # Zathura config
-        theme_utils.theme_link(theme_path / '.config' /
-                               'zathura', Path.home() / '.config' / 'zathura')
+        theme_utils.theme_link(theme_cfg / 'zathura', home_cfg / 'zathura')
         print("Zathura linked!")
     else:
         print("ERROR: Path to given theme doesn't exist!")
