@@ -65,6 +65,8 @@ def __main__():
     theme_utils.theme_link(base_cfg / 'zshrc', Path.home() / '.zshrc')
     theme_utils.theme_link(base_cfg / 'oh-my-zsh',
                            Path.home() / '.oh-my-zsh')
+    theme_utils.theme_link(base_cfg / 'omz-custom',
+                           Path.home() / '.omz-custom')
     print("ZSH / oh-my-zsh linked!")
 
     # Link and reload Xresources
