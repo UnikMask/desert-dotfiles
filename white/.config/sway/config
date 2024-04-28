@@ -1,0 +1,232 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+exec bash ~/.wlinitrc
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term kitty
+set $browser env MOZ_ENABLE_WAYLAND=1 waterfox-g
+set $email thunderbird
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu ~/.config/rofi/launchIroh.sh
+set $laptop eDP-1
+
+
+font pango:Hack Mono 12
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Iroh-Dark'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'Numix-Cursor-Light'
+}
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+output * bg ~/dotboy/saves/desert/black/wallpaper.jpg fill
+output $laptop {
+    scale 1.9
+    max_render_time 16
+}
+workspace 2 output $laptop
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+input * {
+    xkb_layout "us,us"
+    xkb_variant ",intl"
+    accel_profile "flat"
+    tap enabled
+    dwt enabled
+}
+
+# Standard key mappings
+    bindsym XF86AudioRaiseVolume exec "scripts/volumeMod.sh up"
+    bindsym XF86AudioLowerVolume exec "scripts/volumeMod.sh down"
+    bindsym XF86AudioMute exec "scripts/volumeMod.sh mute"
+    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym XF86Search exec $menu
+
+# Colors
+    client.focused 		#403735 	#403735		#e9d49c		#7e504a 	#7e504a
+    client.unfocused 	#2e2b2a 	#2e2b2a 	#7d5650 	#7e504a 	#7e504a
+    client.focused_inactive	#2e2b2a	#2e2b2a 	#7d5650 	#7e504a 	#7e504a
+    client.background 	#2e2b2a
+
+# Window schemes
+    for_window [shell="xwayland"] title_format "[XWayland] %title"
+    for_window [class=".*"] border pixel 0
+    for_window [class="Vlc"] floating enable
+    for_window [app_id="vulkan_tutorial"] floating enable
+    for_window [class="Vulkan Tutorial"] floating enable
+    for_window [class="Vulkan ComputeTutorial"] floating enable
+
+
+### Key bindings
+    # Start a terminal
+    bindsym $mod+Return exec $term
+    bindsym $mod+Ctrl+f exec $browser
+    bindsym $mod+Ctrl+t exec $email
+    bindsym $mod+Ctrl+g gaps inner all set 10
+    bindsym $mod+Ctrl+n gaps inner all set 0
+
+    # Kill focused window
+    bindsym $mod+Ctrl+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $menu
+    bindsym $mod+Shift+e exec ~/.config/rofi/iroh-powermenu.sh
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+r restart
+    bindsym $mod+Shift+c reload
+
+    # Music controls
+    bindsym $mod+p exec playerctl play-pause
+    bindsym $mod+m exec playerctl next
+    bindsym $mod+n exec playercl previous
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
+
+    # Printing
+    bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
+    bindsym Shift+Print exec GRIM_DEFAULT_DIR=~/Pictures/screens grim -t png
+
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+
+    #Layout
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+    bindsym $mod+f fullscreen
+    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+space focus mode_toggle
+    bindsym $mod+a focus parent
+
+    # Scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+include /etc/sway/config.d/*

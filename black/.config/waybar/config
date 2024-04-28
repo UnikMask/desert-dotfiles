@@ -1,0 +1,198 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": [
+        "sway/mode",
+        "custom/media",
+        "custom/appmenu",
+        "custom/browser",
+        "custom/mail",
+        "custom/discord",
+        "sway/scratchpad"
+    ],
+    "modules-center": [
+        "mpd"
+    ],
+    "modules-right": [
+        "sway/workspaces",
+        "sway/language",
+        "pulseaudio",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "keyboard-state": {
+        "numlock": false,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "sway/language": {
+        "format": " {short} {variant}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": [
+            "",
+            ""
+        ],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "mpd": {
+        "format": "{stateIcon} {artist} - {album} - {title}",
+        "format-disconnected": "",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "title-len": 30,
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Europe/Paris",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "bat": "BAT0",
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-good": "{capacity}% {icon}",
+        "format-warning": "{capacity}% {icon}",
+        "format-critical": "{capacity}% {icon}",
+        "format-full": "{capacity}%  󰁹",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂"
+        ],
+        "format-charging-icons": [
+            "󰢟",
+            "󰢜",
+            "󰂆",
+            "󰂇",
+            "󰂈",
+            "󰢝",
+            "󰂉",
+            "󰢞",
+            "󰂊",
+            "󰂋",
+            "󰂅"
+        ]
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "󰝟 {icon}",
+        "format-muted": "󰝟 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+    },
+    "custom/appmenu": {
+        "format": "󰀻",
+        "on-click": "~/.config/rofi/launchIroh.sh"
+    },
+    "custom/browser": {
+        "format": "",
+        "on-click": "$BROWSER & disown",
+        "on-click-right": "$BROWSER --private-window & disown"
+    },
+    "custom/mail": {
+        "format": "󰇮",
+        "on-click": "$EMAIL & disown"
+    },
+    "custom/discord": {
+        "format": "󰙯",
+        "on-click": "discord & disown"
+    }
+}
