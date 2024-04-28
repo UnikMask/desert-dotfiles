@@ -113,5 +113,9 @@ def __main__():
     theme_utils.theme_link(theme_cfg / 'ncmpcpp', Path.home() / '.ncmpcpp')
     print('NCMPCPP linked!')
 
+    # Mopidy config
+    theme_utils.theme_link(base_cfg / 'mopidy', home_cfg / 'mopidy')
+    print('Mopidy Linked!')
+
 
 __main__()
