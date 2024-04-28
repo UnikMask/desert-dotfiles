@@ -101,8 +101,12 @@ def __main__():
         print("Sway linked!")
         theme_utils.theme_link(theme_path / '.config' / 'waybar',
                                Path.home() / '.config' / 'waybar')
-
         print("Waybar linked!")
+
+        # Zathura config
+        theme_utils.theme_link(theme_path / '.config' /
+                               'zathura', Path.home() / '.config' / 'zathura')
+        print("Zathura linked!")
     else:
         print("ERROR: Path to given theme doesn't exist!")
         exit(1)
