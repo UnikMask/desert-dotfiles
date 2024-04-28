@@ -1,0 +1,10 @@
+# vim:ft=bash
+
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# easyeffects --gapplication-service &
+nm-applet &
+solaar -w hide &
+dunst &
+mpDris2 &
+kdeconnect-indicator &
+waybar &

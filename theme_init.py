@@ -49,6 +49,10 @@ def __main__():
         theme_utils.theme_link(t_kitty_path, a_kitty_path)
         print("Kitty linked!")
 
+        theme_utils.theme_link(base_path / 'wlinitrc',
+                               Path.home(), '.wlinitrc')
+        print("Wayland Init RC linked!")
+
         # Link and reload Xresources
         theme_utils.theme_link(t_xrdb_path, a_xrdb_path)
         theme_utils.runsilent(["xrdb", str(t_xrdb_path)])
