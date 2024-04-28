@@ -109,5 +109,9 @@ def __main__():
     theme_utils.theme_link(base_cfg / 'gtk-themes', Path.home() / '.themes')
     print('GTK Theme Linked!')
 
+    # NCMPCPP config
+    theme_utils.theme_link(theme_cfg / 'ncmpcpp', Path.home() / '.ncmpcpp')
+    print('NCMPCPP linked!')
+
 
 __main__()
