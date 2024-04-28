@@ -45,9 +45,6 @@ def __main__():
             and shutil.which("feh"):
         theme_utils.runsilent(['feh', '--bg-scale', str(wp_path)])
 
-    t_xrdb_path = theme_path / '.Xresources'
-    a_xrdb_path = Path.home() / '.Xresources'
-
     # Unlink original kitty path and link new one
     theme_utils.theme_link(
         base_cfg / 'kitty', home_cfg / 'kitty')
@@ -65,8 +62,9 @@ def __main__():
     print("ZSH / oh-my-zsh linked!")
 
     # Link and reload Xresources
-    theme_utils.theme_link(t_xrdb_path, a_xrdb_path)
-    theme_utils.runsilent(["xrdb", str(t_xrdb_path)])
+    theme_utils.theme_link(theme_path / '.Xresources',
+                           Path.home() / '.Xresources')
+    theme_utils.runsilent(["xrdb", str(Path.home() / '.Xresources')])
     print("Xresources linked!")
 
     # Reload polybar if exists
