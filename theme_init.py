@@ -53,6 +53,11 @@ def __main__():
                                Path.home(), '.wlinitrc')
         print("Wayland Init RC linked!")
 
+        theme_utils.theme_link(base_path / 'zshrc', Path.home() / '.zshrc')
+        theme_utils.theme_link(base_path / 'oh-my-zsh',
+                               Path.home() / '.oh-my-zsh')
+        print("ZSH / oh-my-zsh linked!")
+
         # Link and reload Xresources
         theme_utils.theme_link(t_xrdb_path, a_xrdb_path)
         theme_utils.runsilent(["xrdb", str(t_xrdb_path)])

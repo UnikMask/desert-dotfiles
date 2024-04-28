@@ -1,0 +1,90 @@
+#########################
+# Environment Variables #
+#########################
+
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/.cargo/bin:$PATH:$HOME/.emacs.d/bin:$HOME/.doom.d/bin
+# For Go
+export PATH=$PATH:$HOME/go/bin
+
+# Path to your oh-my-zsh installation.
+export ZSH="/home/alexa/.oh-my-zsh"
+
+#######
+# OMZ #
+#######
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="agnoster"
+
+CASE_SENSITIVE="false"
+HYPHEN_INSENSITIVE="false"
+DISABLE_AUTO_UPDATE="dalse"
+DISABLE_UPDATE_PROMPT="true"
+export UPDATE_ZSH_DAYS=1
+DISABLE_MAGIC_FUNCTIONS="false"
+DISABLE_LS_COLORS="false"
+DISABLE_AUTO_TITLE="false"
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+HIST_STAMPS="dd/mm/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Zsh Autosuggestions strategy
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+	git
+	dotenv
+	emacs
+	colored-man-pages
+	gpg-agent 
+	npm 
+	ssh-agent
+	zsh-autosuggestions 
+	zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+######################
+# User configuration #
+######################
+
+export LANG=en_US.UTF-8
+export EDITOR='nvim'
+export ARCHFLAGS="--march=native -O2"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+
+# Envvars
+export TERM=kitty
+export VOLTA_HOME="$HOME/.volta"
+export NEOVIDE_MULTIGRID=1
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+export GTK_THEME=Materia-dark
+
+# Add Gnome keyring automatically on new session
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
