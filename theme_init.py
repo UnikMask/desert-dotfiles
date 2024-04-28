@@ -47,9 +47,10 @@ def __main__():
         a_xrdb_path = Path.home() / '.Xresources'
 
         # Unlink original kitty path and link new one
-        theme_utils.theme_link(base_cfg / 'kitty', Path.home() / 'kitty')
+        theme_utils.theme_link(
+            base_cfg / 'kitty', home_cfg / 'kitty')
         theme_utils.theme_link(theme_cfg / 'kitty' / 'theme.conf',
-                               Path.home() / 'kitty' / 'theme.conf')
+                               home_cfg / 'kitty' / 'theme.conf')
         print("Kitty linked!")
 
         theme_utils.theme_link(base_path / 'wlinitrc',
