@@ -5,6 +5,6 @@
 # Mail: <visorunik@gmail.com>
 # === === === === === === === ===
 
-style="iroh-drun"
+style="drun"
 
 rofi -no-lazy-grab -show drun -theme "$style".rasi

@@ -6,7 +6,7 @@
 # === === === === === === === ===
 
 # Command for rofi
-rofi_cmd="rofi -theme iroh-powermenu.rasi"
+rofi_cmd="rofi -theme powermenu.rasi"
 
 # Options
 shutdown="⏻"
