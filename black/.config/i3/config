@@ -20,6 +20,7 @@ exec_always ~/scripts/launchPolybar.sh
 
 #For i3-gaps
 for_window [class=".*"] border pixel 0
+for_window [class="vulkan_tutorial"] floating enable
 gaps inner 10
 
 # Font for window titles. Will also be used by the bar unless a different font
