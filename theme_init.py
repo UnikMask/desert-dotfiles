@@ -138,5 +138,9 @@ def __main__():
                            Path.home() / 'scripts')
     print('Scripts linked!')
 
+    # Easyeffects config
+    theme_utils.theme_link(base_cfg / 'easyeffects', home_cfg / 'easyeffects')
+    print('Easyeffects linked!')
+
 
 __main__()
