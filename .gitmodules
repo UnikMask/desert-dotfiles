@@ -1,3 +1,9 @@
 [submodule "config/oh-my-zsh"]
 	path = config/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh
+[submodule "config/omz-custom/plugins/zsh-syntax-highlighting"]
+	path = config/omz-custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "config/omz-custom/plugins/zsh-autosuggestions"]
+	path = config/omz-custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
