@@ -98,8 +98,7 @@ def __main__():
     print("Rofi linked!")
 
     # i3 configuration
-    theme_utils.theme_link(theme_cfg / 'i3' / 'config',
-                           home_cfg / 'i3' / 'config')
+    theme_utils.theme_link(theme_cfg / 'i3', home_cfg / 'i3')
     print("i3 linked!")
 
     # Sway configuration
@@ -141,6 +140,11 @@ def __main__():
     # Easyeffects config
     theme_utils.theme_link(base_cfg / 'easyeffects', home_cfg / 'easyeffects')
     print('Easyeffects linked!')
+
+    # Neovim config
+    theme_utils.theme_link(base_cfg / 'nvim', home_cfg / 'nvim')
+    theme_utils.theme_link(base_cfg / 'nvim_local', home_cfg / 'nvim' / 'local')
+    print('Neovim linked!')
 
 
 __main__()
