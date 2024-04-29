@@ -133,5 +133,10 @@ def __main__():
                            Path.home() / '.xbindkeysrc')
     print("XBindkeysRC linked!")
 
+    # Link Scripts
+    theme_utils.theme_link(base_path / 'scripts',
+                           Path.home() / 'scripts')
+    print('Scripts linked!')
+
 
 __main__()
