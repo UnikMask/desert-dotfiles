@@ -17,7 +17,7 @@ def getHour():
 
 
 # Paths to light and dark theme
-base_path = Path.home().joinpath('dotboy/saves/desert')
+base_path = Path(os.path.dirname(os.path.realpath(__file__)))
 light_path = base_path.joinpath('white')
 dark_path = base_path.joinpath('black')
 
