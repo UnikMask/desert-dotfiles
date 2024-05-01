@@ -150,11 +150,18 @@ def __main__():
 
     # Neovim config
     theme_utils.theme_link(base_cfg / 'nvim', home_cfg / 'nvim')
-    theme_utils.theme_link(base_cfg / 'nvim_local', home_cfg / 'nvim' / 'local')
+    theme_utils.theme_link(base_cfg / 'nvim_local',
+                           home_cfg / 'nvim' / 'local')
     print('Neovim linked!')
 
     # Neofetch config
     theme_utils.theme_link(base_cfg / 'neofetch', home_cfg / 'neofetch')
     print('Neofetch Linked!')
+
+    # Input Remapper config
+    theme_utils.theme_link(base_cfg / 'input-remapper-2',
+                           home_cfg / 'input-remapper-2')
+    print('Input Remapper Linked!')
+
 
 __main__()
