@@ -9,7 +9,7 @@
 	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "config/nvim"]
 	path = config/nvim
-	url = git://git@github.com:UnikMask/UnikVim
+	url = https://github.com/UnikMask/UnikVim
 [submodule "config/nvim_local/iroh-vim"]
 	path = config/nvim_local/iroh-vim
-	url = git://git@github.com:UnikMask/iroh-vim
+	url = https://github.com/UnikMask/iroh-vim
