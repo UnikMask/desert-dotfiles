@@ -26,7 +26,7 @@ plain_text = no
 format = "<b>%s</b>\n%b\n%p"
 
 # Sort messages by urgency.
-sort = no
+sort = yes
 
 # Show how many messages are currently hidden (because of geometry).
 indicate_hidden = yes
@@ -71,7 +71,9 @@ hide_duplicates_count = yes
 # The width can be negative.  In this case the actual width is the
 # screen width minus the width defined in within the geometry option.
 #geometry = "250x50-40+40"
-geometry = "1000x3-20+70"
+# geometry = "300x5-30+20"
+width = (0,600)
+offset = 20x20
 
 # Shrink window if it's smaller than the width.  Will be ignored if
 # width is 0.
@@ -150,7 +152,8 @@ browser = /usr/bin/firefox -new-tab
 
 # Align icons left/right/off
 icon_position = left
-max_icon_size = 200
+min_icon_size = 64
+max_icon_size = 128
 
 # Paths to default icons.
 
@@ -197,9 +200,9 @@ background = "#1a0909cc"
 timeout = 20
 
 [urgency_critical]
-frame_color = "#2e2b2acc"
-foreground = "#2E2B2A"
-background = "#2e2b2acc"
+frame_color = "#faac09"
+foreground = "#E9D49C"
+background = "#faac09"
 #background = "#2B313C"
 timeout = 0
 
