@@ -102,7 +102,7 @@
             "warning": 30,
             "critical": 15
         },
-        "bat": "BAT0",
+        "bat": "BAT1",
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% {icon}",
         "format-plugged": "{capacity}% ",
@@ -180,7 +180,7 @@
     },
     "custom/appmenu": {
         "format": "󰀻",
-        "on-click": "~/.config/rofi/launchIroh.sh"
+        "on-click": "~/.config/rofi/rofi-drun.sh"
     },
     "custom/browser": {
         "format": "",
