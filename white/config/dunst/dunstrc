@@ -150,7 +150,7 @@ browser = /usr/bin/firefox -new-tab
 
 # Align icons left/right/off
 icon_position = left
-max_icon_size = 200
+max_icon_size = 100
 
 # Paths to default icons.
 

@@ -1,5 +1,5 @@
 [global]
-font = Inconsolata 16
+font = Inconsolata 14
 icon_path = /usr/share/icons/Tela-purple-dark/16@2x/apps:/usr/share/icons/Tela-purple-dark/24@2x/places:/usr/share/icons/Tela-purple-dark/16@2x/status:/usr/share/icons/Tela-purple-dark/24@2x/actions:/usr/share/icons/Tela-purple-dark/24@2x/devices:/usr/share/icons/Tela-purple-dark/16@2x/mimetypes:/usr/share/icons/Adwaita/48x48/categories:/usr/share/icons/Tela-purple-dark/24@2x/panel:/usr/share/icons/Tela-purple-dark/24@2x/animations
 
 # Allow a small subset of html markup:
