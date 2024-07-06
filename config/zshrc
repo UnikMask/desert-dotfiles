@@ -78,6 +78,7 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 # Envvars
 export TERM=kitty
 export VOLTA_HOME="$HOME/.volta"
+export GOPATH="$HOME/go"
 export NEOVIDE_MULTIGRID=1
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
