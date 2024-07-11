@@ -35,7 +35,7 @@ zi light agnoster/agnoster-zsh-theme
 # Keybinds
 bindkey -e
 bindkey "^k" history-search-backward
-bindkey "^l" history-search-forward
+bindkey "^j" history-search-forward
 
 autoload -U compinit && compinit
 zi cdreplay -q
@@ -58,8 +58,10 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 
 # Alias
-alias ls='ls --color'
+alias ls='exa'
 alias grep='rg'
+# alias 
 
 # Fuzzy Finder
+eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
