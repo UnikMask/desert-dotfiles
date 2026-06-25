@@ -1,0 +1,107 @@
+/* vim:ft=css
+ * === === === === === === === === === === ===
+ * Iroh Bitwarden (rbw) selector for Rofi
+ * Creator: UnikMask
+ * Email: <visorunik@gmail.com>
+ * === === === === === === === === === === ===
+ */
+
+/* Color import */
+@import "iroh.rasi"
+
+configuration {
+	font: "FiraCode Nerd Font Mono 20";
+	/* Center the window; the upward shift (10% of screen height) is applied
+	   via the -yoffset CLI flag, computed at runtime in rofi-bw.sh. */
+	location: 0;
+	xoffset: 0;
+	show-icons: false;
+}
+
+window {
+	width: 50%;
+	height: 45%;
+	anchor: center;
+	background-color: @bg-light;
+	border: 2px;
+	border-color: @bg;
+	border-radius: 12px;
+	padding: 12px;
+}
+
+mainbox {
+	orientation: vertical;
+	children: [inputbar, listview];
+	background-color: @bg-light;
+	spacing: 8px;
+}
+
+/* Text box (input bar) on top; entries are displayed below it. */
+inputbar {
+	children: [textbox-prompt-colon, entry, case-indicator];
+	spacing: 12px;
+	padding: 8px 12px;
+	background-color: @bg;
+	border: 0px;
+	border-radius: 8px;
+}
+
+textbox-prompt-colon {
+	margin: 0 4 0 0;
+	font: inherit;
+	text-color: @dust;
+	expand: false;
+	str: "";
+}
+
+entry {
+	text-color: @fg;
+	cursor: text;
+	font: "FiraCode Nerd Font Mono 22";
+	placeholder: "Search password...";
+	placeholder-color: @dust;
+}
+
+case-indicator {
+	text-color: @mony-light;
+}
+
+/* List of entries: 2 columns, ~5 rows. */
+listview {
+	columns: 2;
+	lines: 5;
+	cycle: true;
+	dynamic: true;
+	expand: true;
+	layout: vertical;
+	margin: 4px 0px 0px 0px;
+	background-color: @bg-light;
+	spacing: 4px;
+}
+
+element {
+	orientation: horizontal;
+	padding: 8px 12px;
+	border: 0px;
+	border-radius: 6px;
+	background-color: @bg;
+	border-color: @bg-light;
+	spacing: 8px;
+}
+
+element-text {
+	font: "FiraCode Nerd Font Mono 16";
+	text-color: @fg;
+	horizontal-align: 0.0;
+	vertical-align: 0.5;
+	expand: true;
+}
+
+element selected {
+	background-color: @mony;
+	border-color: @mony-light;
+}
+
+element-text selected {
+	text-color: @bg;
+}
