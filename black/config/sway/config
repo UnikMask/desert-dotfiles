@@ -22,7 +22,10 @@ set $email thunderbird
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu ~/.config/rofi/rofi-drun.sh
-set $laptop eDP-1
+set $password_prompt ~/.config/rofi/rofi-bw.sh
+# set $laptop eDP-1 -- no laptop here
+set $screen1 DP-3
+set $screen2 DP-1
 
 
 font pango:Hack Mono 12
@@ -122,6 +125,7 @@ input * {
     # Start your launcher
     bindsym $mod+d exec $menu
     bindsym $mod+Shift+e exec ~/.config/rofi/rofi-powermenu.sh
+    bindsym $mod+Shift+p exec $password_prompt
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
