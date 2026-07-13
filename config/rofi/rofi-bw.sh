@@ -6,6 +6,9 @@
 # Email: <visorunik@gmail.com>
 # === === === === === === === === === === ===
 
+
+rbw unlock
+
 # Compute a vertical offset equal to 10% of the focused output's height,
 # so the window sits 10% above screen center (rofi's yoffset is in pixels).
 # swaymsg lists each output as an object whose rect.height appears before
